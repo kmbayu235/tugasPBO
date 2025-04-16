@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LoginSystem {
+public class SistemLogin {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String username, password;
@@ -13,7 +13,7 @@ public class LoginSystem {
             System.out.print("Masukkan password: ");
             password = input.nextLine();
 
-            if (username.equals("wahyu") && password.equals("1w")) {
+            if (username.equals("bayu") && password.equals("123456")) {
                 System.out.println("\n Selamat datang, " + username + "!");
                 input.close();
                 return;
