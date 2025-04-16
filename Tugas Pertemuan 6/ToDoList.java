@@ -24,7 +24,7 @@ public class ToDoList {
                     System.out.print("Masukkan tugas: ");
                     String tugas = input.nextLine();
                     tugasList.add(tugas);
-                    System.out.println("Tugas ditambahkan!");
+                    System.out.println("Tugas Berhasil ditambahkan!");
                     break;
 
                 case 2:
