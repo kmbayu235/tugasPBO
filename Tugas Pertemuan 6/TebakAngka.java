@@ -1,41 +1,40 @@
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 public class TebakAngka {
     public static void main(String[] args) {
-        Random random = new Random();
         Scanner input = new Scanner(System.in);
+        Random random = new Random();
 
-        int angkaRahasia = random.nextInt(100) + 1; // Angka antara 1-100
+        int target = random.nextInt(100) + 1;
         int tebakan;
         int percobaan = 0;
 
-        System.out.println("=== Permainan Tebak Angka ===");
-        System.out.println("Tebak angka antara 1 hingga 100.");
-        System.out.println("Ketik 0 jika ingin keluar.");
+        System.out.println(" Selamat datang di permainan Tebak Angka!");
+        System.out.println(" Saya telah memilih angka antara 1 hingga 100.");
+        System.out.println(" Coba tebak atau ketik 0 untuk keluar.");
 
         while (true) {
-            System.out.print("Masukkan tebakan Anda: ");
+            System.out.print("\nMasukkan tebakan Anda: ");
             tebakan = input.nextInt();
+            percobaan++;
 
             if (tebakan == 0) {
-                System.out.println("Permainan dihentikan. Angka yang benar adalah: " + angkaRahasia);
+                System.out.println(" Anda memilih keluar. Angka yang benar adalah: " + target);
                 break;
             }
 
-            percobaan++;
-
-            if (tebakan < angkaRahasia) {
-                System.out.println("Terlalu kecil!");
-            } else if (tebakan > angkaRahasia) {
-                System.out.println("Terlalu besar!");
+            if (tebakan < target) {
+                System.out.println(" Terlalu kecil! Coba lagi.");
+            } else if (tebakan > target) {
+                System.out.println(" Terlalu besar! Coba lagi.");
             } else {
-                System.out.println("Selamat! Anda menebak dengan benar.");
-                System.out.println("Jumlah percobaan: " + percobaan);
+                System.out.println(" Selamat! Anda menebak angka dengan benar dalam " + percobaan + " percobaan.");
                 break;
             }
         }
 
+        System.out.println("\n Terima kasih telah bermain!");
         input.close();
     }
 }
