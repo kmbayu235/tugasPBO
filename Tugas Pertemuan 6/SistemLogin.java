@@ -1,37 +1,29 @@
 import java.util.Scanner;
 
-public class SistemLogin {
+public class LoginSystem {
     public static void main(String[] args) {
-        // Data login yang benar
-        String correctUsername = "bayu";
-        String correctPassword = "123456";
-
         Scanner input = new Scanner(System.in);
-
+        String username, password;
         int attempts = 0;
-        boolean loginSukses = false;
+        final int MAX_ATTEMPTS = 3;
 
-        while (attempts < 3) {
-            System.out.print("Masukkan username: ");
-            String username = input.nextLine();
-
+        while (attempts < MAX_ATTEMPTS) {
+            System.out.print("\nMasukkan username: ");
+            username = input.nextLine();
             System.out.print("Masukkan password: ");
-            String password = input.nextLine();
+            password = input.nextLine();
 
-            if (username.equals(correctUsername) && password.equals(correctPassword)) {
-                System.out.println("Selamat datang, " + username + "!");
-                loginSukses = true;
-                break;
+            if (username.equals("wahyu") && password.equals("1w")) {
+                System.out.println("\n Selamat datang, " + username + "!");
+                input.close();
+                return;
             } else {
                 attempts++;
-                System.out.println("Username atau password salah. Percobaan ke-" + attempts);
+                System.out.println(" Username atau password salah! Percobaan: " + attempts + "/" + MAX_ATTEMPTS);
             }
         }
 
-        if (!loginSukses) {
-            System.out.println("Akun diblokir!");
-        }
-
+        System.out.println("\n Akun diblokir! Silakan hubungi admin.");
         input.close();
     }
 }
